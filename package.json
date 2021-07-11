@@ -1,0 +1,70 @@
+{
+  "name": "@indivorg/kit",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "style-guide",
+    "theme-ui",
+    "ui-kit",
+    "ui",
+    "kit",
+    "design",
+    "indiv"
+  ],
+  "files": [
+    "dist/"
+  ],
+  "main": "./dist/cjs/components.js",
+  "types": "./dist/esm/components.d.ts",
+  "module": "./dist/esm/components.js",
+  "source": "src/components.ts",
+  "author": "Bjerk AS / Indiv AS",
+  "license": "Apache-2.0",
+  "repository": "indivorg/kit",
+  "peerDependencies": {
+    "react": "^16 || ^17",
+    "theme-ui": "^0.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@storybook/addon-docs": "^6.3.4",
+    "@storybook/addons": "^6.3.4",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.4",
+    "@theme-ui/preset-base": "^0.10.1",
+    "@types/jest": "^26.0.24",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unicorn": "^34.0.1",
+    "prettier": "^2.3.2",
+    "react": "^17.0.1",
+    "react-dom": "17.0.2",
+    "react-scripts": "^4.0.3",
+    "theme-ui": "^0.10.0",
+    "typescript": "^4"
+  },
+  "volta": {
+    "node": "14.15.0",
+    "yarn": "1.22.10"
+  },
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig-cjs.json",
+    "dev": "start-storybook -p 9009"
+  },
+  "dependencies": {
+    "storybook-addon-theme-ui": "^0.1.5"
+  }
+}
