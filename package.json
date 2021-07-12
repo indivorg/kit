@@ -65,7 +65,8 @@
   },
   "scripts": {
     "build": "tsc && tsc -p tsconfig-cjs.json",
-    "dev": "start-storybook -p 9009"
+    "dev": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react-table": "^7.7.0",
