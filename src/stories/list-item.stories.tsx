@@ -14,9 +14,15 @@ export const withText: React.FC = props => (
 
 export const withButton: React.FC = props => (
   <ListItem {...props}>
-    <Flex sx={{ justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer' }}>
+    <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
       <Text>This is a list element</Text>
-      <Button variant="small" sx={{ py: 2, px: 3 }}>Go there</Button>
+      <Button>Go there</Button>
     </Flex>
   </ListItem>
 );
+
+export const withOnClick: React.FC = props => (
+  <ListItem {...props} onClick={() => alert('Clicked it!')}>
+    This is clickable!
+  </ListItem>
+)

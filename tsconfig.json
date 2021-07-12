@@ -6,6 +6,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "theme-ui",
     "esModuleInterop": true,
+    "sourceMap": true,
     "moduleResolution": "node",
     "declaration": true,
     "isolatedModules": true,
