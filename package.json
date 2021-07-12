@@ -64,7 +64,7 @@
     "yarn": "1.22.10"
   },
   "scripts": {
-    "build": "tsc && tsc -p tsconfig-cjs.json",
+    "build": "tsc && tsc -p tsconfig.cjs.json",
     "dev": "start-storybook -p 9009",
     "build-storybook": "build-storybook"
   },
