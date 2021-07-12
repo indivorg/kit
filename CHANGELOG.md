@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/indivorg/kit/compare/v1.0.0...v1.0.1) (2021-07-12)
+
+
+### Bug Fixes
+
+* Add barrels file ([4725ec5](https://www.github.com/indivorg/kit/commit/4725ec5951f9f84b66227348bd7f2fe0e35c6c2e))
+
 ## 1.0.0 (2021-07-12)
 
 
