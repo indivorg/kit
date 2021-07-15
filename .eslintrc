@@ -34,7 +34,6 @@
       "always",
       { "exceptions": ["-", "=", "#__PURE__"], "markers": ["/"] }
     ],
-    // location should be accessed through `window.location`
     "no-restricted-globals": [
       "error",
       "event",
@@ -54,7 +53,6 @@
     ],
     "import/no-duplicates": "error",
     "eslint-comments/no-unused-disable": "error",
-    // might wanna enable this but require description? https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md#allow-with-description
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/explicit-module-boundary-types": "warn",
     "@typescript-eslint/member-ordering": "error",
@@ -70,7 +68,6 @@
     "jest/expect-expect": "off",
     "promise/always-return": "off",
     "unicorn/expiring-todo-comments": "warn",
-    // the error log sink needs this to be called `error` in logs, so let's just enforce that
     "unicorn/catch-error-name": "error",
     "unicorn/filename-case": ["error", { "case": "kebabCase" }],
     "react/destructuring-assignment": "error",
@@ -89,13 +86,10 @@
     {
       "files": ["**/*.ts", "**/*.tsx"],
       "rules": {
-        // we don't wanna add this to js files
         "@typescript-eslint/no-implicit-any-catch": [
           "error",
-          // remove together with `no-explicit-any` at some point
           { "allowExplicitAny": true }
         ],
-        // TS handles this
         "no-undef": "off"
       }
     },
@@ -108,7 +102,6 @@
     {
       "files": ["**/generated"],
       "rules": {
-        // we don't wanna change these since it's generated code
         "@typescript-eslint/array-type": "off",
         "@typescript-eslint/ban-types": "off",
         "@typescript-eslint/no-unused-vars": "off",
