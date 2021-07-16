@@ -25,7 +25,7 @@
   "repository": "indivorg/kit",
   "peerDependencies": {
     "react": "^16 || ^17",
-    "theme-ui": "^0.10"
+    "theme-ui": ">=^0.10"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
