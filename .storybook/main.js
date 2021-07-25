@@ -1,6 +1,6 @@
 const path = require('path');
 
-const resolve = p => path.join(process.cwd(), p);
+const resolve = (p) => path.join(process.cwd(), p);
 module.exports = {
   webpackFinal(config) {
     config.resolve.alias = {

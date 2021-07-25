@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "declaration": true,
     "isolatedModules": true,
-    "outDir": "./dist/esm",
+    "outDir": "./dist/esm"
   },
   "include": ["src/**/*", "docs/**/*"]
 }

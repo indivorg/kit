@@ -20,9 +20,9 @@ standard [Theme Specification][].
 
 ---
 
-Built for designs systems, white-labels, themes and other applications
-where colors, typography, and layout are treated as first-class citizens
-and based on a standard [Theme Specification][].
+Built for designs systems, white-labels, themes and other applications where
+colors, typography, and layout are treated as first-class citizens and based on
+a standard [Theme Specification][].
 
 - Uses [Theme UI][]
 - No hard-coded colours / branding – not too opinionated.
@@ -40,12 +40,12 @@ component and pass in a custom `theme` object.
 
 ```jsx
 // basic usage
-import { ThemeProvider } from 'theme-ui'
-import theme from './theme'
+import { ThemeProvider } from 'theme-ui';
+import theme from './theme';
 
 export default (props) => (
   <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-)
+);
 ```
 
 [theme specification]: https://system-ui.com/theme

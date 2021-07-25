@@ -8,11 +8,11 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const withText: React.FC = props => (
+export const withText: React.FC = (props) => (
   <ListItem {...props}>This is a list element</ListItem>
 );
 
-export const withButton: React.FC = props => (
+export const withButton: React.FC = (props) => (
   <ListItem {...props}>
     <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
       <Text>This is a list element</Text>
@@ -21,8 +21,8 @@ export const withButton: React.FC = props => (
   </ListItem>
 );
 
-export const withOnClick: React.FC = props => (
+export const withOnClick: React.FC = (props) => (
   <ListItem {...props} onClick={() => alert('Clicked it!')}>
     This is clickable!
   </ListItem>
-)
+);
