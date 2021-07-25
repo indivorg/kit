@@ -29,7 +29,7 @@ interface Props {
   data: Record<string, string>[];
 }
 
-export const WithText: React.FC<Props> = props => {
+export const WithText: React.FC<Props> = (props) => {
   return (
     <Table
       {...props}
@@ -48,7 +48,7 @@ export const WithText: React.FC<Props> = props => {
   );
 };
 
-export const WithThemeStyles: React.FC<Props> = props => (
+export const WithThemeStyles: React.FC<Props> = (props) => (
   <ThemeProvider
     theme={{
       table: {

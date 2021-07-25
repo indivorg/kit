@@ -7,7 +7,7 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const Normal: React.FC = props => (
+export const Normal: React.FC = (props) => (
   <Breadcrumb
     {...props}
     items={[

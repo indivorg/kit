@@ -4,7 +4,8 @@ import { UseTableOptions, useTable } from 'react-table';
 import { Box, BoxProps } from 'theme-ui';
 
 export interface TableProps<D extends Record<string, unknown>>
-  extends UseTableOptions<D>, BoxProps {
+  extends UseTableOptions<D>,
+    BoxProps {
   withHeader?: boolean;
 }
 
