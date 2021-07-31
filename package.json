@@ -1,9 +1,6 @@
 {
   "name": "@indivorg/kit",
   "version": "1.0.1",
-  "publishConfig": {
-    "access": "public"
-  },
   "keywords": [
     "style-guide",
     "theme-ui",
@@ -13,24 +10,31 @@
     "design",
     "indiv"
   ],
+  "repository": "indivorg/kit",
+  "license": "Apache-2.0",
+  "author": "Bjerk AS / Indiv AS",
+  "main": "./dist/cjs/components.js",
+  "module": "./dist/esm/components.js",
+  "source": "src/components.ts",
+  "types": "./dist/esm/components.d.ts",
   "files": [
     "dist/"
   ],
-  "main": "./dist/cjs/components.js",
-  "types": "./dist/esm/components.d.ts",
-  "module": "./dist/esm/components.js",
-  "source": "src/components.ts",
-  "author": "Bjerk AS / Indiv AS",
-  "license": "Apache-2.0",
-  "repository": "indivorg/kit",
-  "peerDependencies": {
-    "react": "^16 || ^17",
-    "theme-ui": ">=^0.10"
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.cjs.json",
+    "dev": "start-storybook -p 9009",
+    "build-storybook": "build-storybook",
+    "lint": "eslint \"src/**/*.ts\" --fix"
+  },
+  "dependencies": {
+    "react-table": "^7.7.0",
+    "storybook-addon-theme-ui": "^0.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@indivorg/eslint-config": "^2",
     "@storybook/addon-docs": "^6.3.4",
     "@storybook/addons": "^6.3.4",
     "@storybook/preset-create-react-app": "^3.2.0",
@@ -39,18 +43,9 @@
     "@types/faker": "^5.5.7",
     "@types/jest": "^26.0.24",
     "@types/react-table": "^7.7.2",
-    "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "babel-loader": "^8.2.2",
     "eslint": "^7.30.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-unicorn": "^34.0.1",
     "faker": "^5.5.3",
     "prettier": "^2.3.2",
     "react": "^17.0.1",
@@ -59,17 +54,15 @@
     "theme-ui": "^0.10.0",
     "typescript": "^4"
   },
+  "peerDependencies": {
+    "react": "^16 || ^17",
+    "theme-ui": ">=^0.10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "volta": {
     "node": "14.15.0",
     "yarn": "1.22.10"
-  },
-  "scripts": {
-    "build": "tsc && tsc -p tsconfig.cjs.json",
-    "dev": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
-  },
-  "dependencies": {
-    "react-table": "^7.7.0",
-    "storybook-addon-theme-ui": "^0.1.5"
   }
 }
