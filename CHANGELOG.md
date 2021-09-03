@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/indivorg/kit/compare/v1.0.1...v1.1.0) (2021-09-03)
+
+
+### Features
+
+* Add all old components ([c7018ba](https://www.github.com/indivorg/kit/commit/c7018ba5fbcc96ed2965e1d5d406db53fe669727))
+
 ### [1.0.1](https://www.github.com/indivorg/kit/compare/v1.0.0...v1.0.1) (2021-07-12)
 
 ### Bug Fixes
