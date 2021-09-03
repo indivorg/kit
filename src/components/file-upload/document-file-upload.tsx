@@ -67,7 +67,7 @@ export const DocumentFileUpload: React.FC<FileUploadProps> = (props) => {
             justifyContent: 'center',
           }}
         >
-          {value?.length > 0 ? (
+          {value && value?.length > 0 ? (
             value.map(i => (
               <div key={i} sx={{ my: 1 }}>
                 {i.split('/').pop()}

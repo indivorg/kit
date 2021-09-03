@@ -26,8 +26,9 @@ const defaultProps = {
   accept: 'image/*',
 };
 
-export const ImageFileUpload: React.FC<ImageFileUploadProps> = (props) => {
-  const { value, user, id, accept, buttonComponent, validate, upload, remove } = props;
+export const ImageFileUpload: React.FC<ImageFileUploadProps> = props => {
+  const { value, user, id, accept, buttonComponent, validate, upload, remove } =
+    props;
 
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([] as string[]);
@@ -42,13 +43,16 @@ export const ImageFileUpload: React.FC<ImageFileUploadProps> = (props) => {
       return;
     }
     if (validate) {
-      const validationErrors = Array.from(filesToUpload).reduce((acc: string[], file) => {
-        const err = validate(file);
-        if (err) {
-          acc.push(err);
-        }
-        return acc;
-      }, []);
+      const validationErrors = Array.from(filesToUpload).reduce(
+        (acc: string[], file) => {
+          const err = validate(file);
+          if (err) {
+            acc.push(err);
+          }
+          return acc;
+        },
+        [],
+      );
       if (validationErrors.length) {
         setErrors(validationErrors);
         return;
@@ -59,7 +63,9 @@ export const ImageFileUpload: React.FC<ImageFileUploadProps> = (props) => {
     try {
       if (filesToUpload.length !== 0) {
         const url = await upload(filesToUpload[0]);
-        setImage(url);
+        if (url) {
+          setImage(url);
+        }
       }
     } catch (err) {
       setErrors([err.message]);
@@ -116,7 +122,9 @@ export const ImageFileUpload: React.FC<ImageFileUploadProps> = (props) => {
           <FileDeleteButton
             mt={3}
             onClick={() => {
-              remove(value);
+              if (value && remove) {
+                remove(value);
+              }
               setImage('');
             }}
           >
