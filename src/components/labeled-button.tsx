@@ -1,41 +1,32 @@
 import React from 'react';
-import { ButtonProps, Flex, ForwardRef, IconButton, Label } from 'theme-ui';
+import { Button, ButtonProps, ForwardRef, ThemeUIStyleObject } from 'theme-ui';
 
 export interface LabeledButtonProps extends ButtonProps {
-  label: string;
   name?: string;
+  sx?: ThemeUIStyleObject;
 }
 
 export const LabeledButton: ForwardRef<HTMLButtonElement, LabeledButtonProps> =
-  React.forwardRef(({ label, name, children, ...props }, ref) => {
+  React.forwardRef(({ name, children, sx, ...props }, ref) => {
     return (
-      <Flex sx={{ alignItems: 'center' }}>
-        <Label
-          htmlFor={name}
-          sx={{
-            width: 'auto',
-            flexGrow: 1,
-            color: 'black',
-            fontWeight: 'body',
-            marginRight: 1,
-            cursor: 'pointer',
-          }}
-        >
-          {label}
-        </Label>
-        <IconButton
-          {...props}
-          ref={ref}
-          id={name}
-          name={name}
-          sx={{
-            flexGrow: 3,
-            cursor: 'pointer',
-          }}
-        >
-          {children}
-        </IconButton>
-      </Flex>
+      <Button
+        mr={3}
+        sx={{
+          color: 'text',
+          ...sx,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          gap: 2,
+        }}
+        {...props}
+        ref={ref}
+        id={name}
+        name={name}
+      >
+        {children}
+      </Button>
     );
   });
 
