@@ -34,14 +34,13 @@ export type ModalProps = {
   header?: React.ReactNode | string;
   hideCloseButton?: boolean;
   fitContent?: boolean;
-  style?: Styles;
 } & ReactModalProps;
 
 export const Modal: React.FC<ModalProps> = ({
   header,
   hideCloseButton = false,
-  children,
   fitContent = false,
+  children,
   ...props
 }) => (
   <ReactModal
