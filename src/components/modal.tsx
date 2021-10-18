@@ -3,7 +3,7 @@ import { HiX } from 'react-icons/hi';
 import ReactModal, { Props as ReactModalProps, Styles } from 'react-modal';
 import { IconButton, Label } from 'theme-ui';
 
-export const defaultStyle = {
+export const defaultStyle: Styles = {
   overlay: {
     position: 'fixed',
     top: 0,
@@ -32,16 +32,30 @@ export const defaultStyle = {
 
 export type ModalProps = {
   header?: React.ReactNode | string;
+  hideCloseButton?: boolean;
+  fitContent?: boolean;
+  style?: Styles;
 } & ReactModalProps;
 
-export const Modal: React.FC<ModalProps> = ({ header, children, ...props }) => (
+export const Modal: React.FC<ModalProps> = ({
+  header,
+  hideCloseButton = false,
+  children,
+  fitContent = false,
+  ...props
+}) => (
   <ReactModal
     className="Modal__Content"
     bodyOpenClassName="Modal__Body--open"
     htmlOpenClassName="Modal__Html--open"
     portalClassName="ModalPortal"
     overlayClassName="Modal__Overlay"
-    style={defaultStyle as Styles}
+    style={{
+      overlay: defaultStyle.overlay,
+      content: fitContent
+        ? { ...defaultStyle.content, width: 'fit-content' }
+        : defaultStyle.content,
+    }}
     {...props}
   >
     {React.isValidElement(header) ? (
@@ -52,12 +66,14 @@ export const Modal: React.FC<ModalProps> = ({ header, children, ...props }) => (
       </Label>
     ) : null}
     {children}
-    <IconButton
-      onClick={props.onRequestClose}
-      sx={{ position: 'absolute', top: 3, right: 3, cursor: 'pointer' }}
-    >
-      <HiX sx={{ fontSize: 5 }} />
-    </IconButton>
+    {!hideCloseButton && (
+      <IconButton
+        onClick={props.onRequestClose}
+        sx={{ position: 'absolute', top: 3, right: 3, cursor: 'pointer' }}
+      >
+        <HiX sx={{ fontSize: 5 }} />
+      </IconButton>
+    )}
   </ReactModal>
 );
 
