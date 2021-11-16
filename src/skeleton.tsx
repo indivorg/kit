@@ -5,6 +5,13 @@ import { Box, BoxProps } from 'theme-ui';
 export interface SkeletonProps extends BoxProps {
   /** `circular` | `rectangular` | `text` */
   shape: 'circular' | 'rectangular' | 'text';
+
+  /**
+   * Use to set size of circular shape.
+   *
+   * @default 1.2rem
+   */
+  size?: string | number;
 }
 
 const pulseKeyframe = keyframes({
@@ -20,7 +27,7 @@ const pulseKeyframe = keyframes({
 });
 
 export const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
-  ({ shape = 'text', ...props }, ref) => (
+  ({ shape = 'text', size = '1.2em', ...props }, ref) => (
     <Box
       ref={ref}
       variant="primary"
@@ -28,10 +35,14 @@ export const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
       // @ts-expect-error themeKey is a private prop
       __themeKey="skeleton"
       __css={{
-        height: shape === 'circular' ? '1rem' : '2rem',
-        borderRadius: 4,
         backgroundColor: 'muted',
-        animation: `${pulseKeyframe} 1.5s ease-in-out 0.5s infinite`
+        height: shape === 'circular' ? size : shape === 'text' && 'auto',
+        width: shape === 'circular' && size,
+        borderRadius: shape === 'circular' ? '50%' : 4,
+        animation: `${pulseKeyframe} 1.5s ease-in-out 0.5s infinite`,
+        '&:empty:before': {
+          content: '"\\00a0"',
+        },
       }}
     />
   ),
