@@ -35,7 +35,7 @@ export const cardLoading: React.FC = props => (
         sx={{
           p: 3,
           width: 240,
-          height: 320,
+          height: 'auto',
           outline: 'solid',
           outlineColor: '#',
           borderRadius: 6,
@@ -59,21 +59,20 @@ export const cardLoading: React.FC = props => (
           retrieving this data form somewhere, which is why we want to write a
           loding component!
         </Text>
-        <Box sx={{ width: 52, height: 52 }} />
       </Card>
 
       <Card
         sx={{
           p: 3,
           width: 240,
-          height: 320,
+          height: 'auto',
           outline: 'solid',
           outlineColor: '#',
           borderRadius: 6,
         }}
       >
         <Flex>
-          <Skeleton />
+          <Skeleton sx={{ width: 80 }} />
           <Skeleton
             {...props}
             shape="circular"
@@ -85,7 +84,6 @@ export const cardLoading: React.FC = props => (
         <Skeleton />
         <Skeleton />
         <Skeleton />
-        <Box sx={{ backgrondColor: '#8fa4c8', width: 52, height: 52 }} />
       </Card>
     </Flex>
   </Box>
