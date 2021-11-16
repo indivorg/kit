@@ -4,7 +4,7 @@ import { Box, BoxProps } from 'theme-ui';
 
 export interface SkeletonProps extends BoxProps {
   /** `circular` | `rectangular` | `text` */
-  shape: 'circular' | 'rectangular' | 'text';
+  shape?: 'circular' | 'rectangular' | 'text';
 
   /**
    * Use to set size of circular shape.
@@ -36,7 +36,7 @@ export const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
       __themeKey="skeleton"
       __css={{
         backgroundColor: 'muted',
-        height: shape === 'circular' ? size : shape === 'text' && 'auto',
+        height: shape === 'circular' && size,
         width: shape === 'circular' && size,
         borderRadius: shape === 'circular' ? '50%' : 4,
         transformOrigin: shape === 'text' && '0 55%',
