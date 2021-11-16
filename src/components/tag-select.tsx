@@ -21,12 +21,15 @@ export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
   React.forwardRef(
     ({ tags = [], onChangeTags = () => '', children, ...props }) => {
       const onAdd = (tag: SelectOption) => {
-        if (tag.id !== '') onChangeTags([...tags, tag]);
+        if (tag.id !== '') {
+          if (!tags.find(entry => tag.id === entry.id))
+            onChangeTags([...tags, tag]);
+        }
       };
 
       const onDelete = (tag: SelectOption) => {
         const newTags = tags.slice(0);
-        const tagIndex = tags.findIndex(val => val.id === tag.id);
+        const tagIndex = newTags.findIndex(val => val.id === tag.id);
         newTags.splice(tagIndex, 1);
         onChangeTags(newTags);
       };
