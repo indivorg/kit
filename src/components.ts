@@ -14,6 +14,7 @@ export * from './components/select-option';
 export * from './components/select';
 export * from './components/tag-field';
 export * from './components/tag-select';
+export * from './accordion';
 export * from './breadcrumb';
 export * from './list-item';
 export * from './skeleton';
