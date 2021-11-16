@@ -39,6 +39,8 @@ export const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
         height: shape === 'circular' ? size : shape === 'text' && 'auto',
         width: shape === 'circular' && size,
         borderRadius: shape === 'circular' ? '50%' : 4,
+        transformOrigin: shape === 'text' && '0 55%',
+        transform: shape === 'text' && 'scale(1, 0.60)',
         animation: `${pulseKeyframe} 1.5s ease-in-out 0.5s infinite`,
         '&:empty:before': {
           content: '"\\00a0"',
