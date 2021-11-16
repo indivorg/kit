@@ -8,6 +8,8 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
+export const primary: React.FC = props => <Skeleton {...props} />;
+
 export const simpleLayout: React.FC = props => (
   <Box>
     <Flex>
