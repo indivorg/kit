@@ -18,7 +18,7 @@ export const ListItem = React.forwardRef<HTMLDivElement, BoxProps>(
         borderStyle: 'solid',
         borderColor: 'muted',
         borderRadius: 4,
-        transition: 'border 150ms ease-out',
+        transition: 'border 15ms ease-out',
         cursor: props.onClick ? 'pointer' : null,
         ':hover': props.onClick
           ? {
