@@ -7,4 +7,4 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const Normal: React.FC = props => <Skeleton {...props} shape="text" />;
+export const textShape: React.FC = props => <Skeleton {...props} shape="text" />;

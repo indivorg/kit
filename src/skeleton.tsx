@@ -7,7 +7,7 @@ export interface SkeletonProps extends BoxProps {
   shape: 'circular' | 'rectangular' | 'text';
 }
 
-const pulse = keyframes({
+const pulseKeyframe = keyframes({
   from: {
     opacity: 0,
   },
@@ -28,9 +28,7 @@ export const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
         height: shape === 'circular' ? '1rem' : '2rem',
         borderRadius: 4,
         backgroundColor: 'muted',
-        animationName: pulse,
-        animationDuration: '1s',
-        animationIterationCount: 'infinite',
+        animation: `${pulseKeyframe} 1.5s ease-in-out 0.5s infinite`
       }}
     />
   ),
