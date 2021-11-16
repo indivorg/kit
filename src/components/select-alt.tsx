@@ -2,6 +2,7 @@ import React from 'react';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { ForwardRef, IconButton, Select as ThemeSelect } from 'theme-ui';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface SelectAltProps {}
 
 export const SelectAlt: ForwardRef<HTMLSelectElement, SelectAltProps> =

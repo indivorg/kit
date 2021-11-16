@@ -2,14 +2,14 @@ import React from 'react';
 import { HiOutlineUser } from 'react-icons/hi';
 import {
   Box,
-  Label,
-  Input,
   FieldProps,
-  Text,
-  Image,
   Flex,
   ForwardRef,
+  Image,
+  Input,
   InputProps,
+  Label,
+  Text,
   ThemeUIStyleObject,
 } from 'theme-ui';
 import { getMargin, getPos, omitMargin, omitPos } from '../util';
@@ -34,8 +34,16 @@ export interface FieldImageProps {
 
 export const FieldImage = React.forwardRef(
   (
-    { as: Control = Input, label, name, error, sx, userData, ...props }: FieldProps<any>,
-    ref
+    {
+      as: Control = Input,
+      label,
+      name,
+      error,
+      sx,
+      userData,
+      ...props
+    }: FieldProps<any>,
+    ref,
   ) => {
     return (
       <Flex
@@ -93,5 +101,5 @@ export const FieldImage = React.forwardRef(
         </Box>
       </Flex>
     );
-  }
+  },
 );
