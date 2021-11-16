@@ -39,12 +39,13 @@ export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
                 <Flex
                   sx={{
                     backgroundColor: 'primary',
-                    border: '3px solid',
+                    border: '0.2rem solid',
                     borderColor: 'secondary',
-                    borderRadius: '8px',
+                    borderRadius: '0.5rem',
                     color: 'background',
                     alignItems: 'center',
-                    p: '5px 9px 5px 9px',
+                    py: 1,
+                    px: 2,
                     m: '8px',
                     width: 'auto',
                     minWidth: '8.75rem',
@@ -53,7 +54,7 @@ export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
                   <Text>{tag.text}</Text>
                   <IconButton
                     sx={{
-                      fontSize: '24px',
+                      fontSize: '1.2rem',
                       ml: 3,
                       flexGrow: 1,
                       justifyContent: 'flex-end',
