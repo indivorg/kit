@@ -20,7 +20,7 @@ export interface TagDropdownProps extends SelectProps {
 export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
   React.forwardRef(
     ({ tags = [], onChangeTags = () => '', children, ...props }) => {
-      const onAddition = (tag: SelectOption) => {
+      const onAdd = (tag: SelectOption) => {
         if (tag.id !== '') onChangeTags([...tags, tag]);
       };
 
@@ -70,7 +70,7 @@ export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
               <Select
                 {...props}
                 onChange={optionElement =>
-                  onAddition({
+                  onAdd({
                     id: optionElement.id,
                     text: optionElement.text,
                   })
