@@ -20,7 +20,14 @@ export interface TagDropdownProps extends SelectProps {
 export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
   React.forwardRef(
     ({ tags = [], onChangeTags = () => '', children, ...props }) => {
-      const onAddition = (tag: SelectOption) => onChangeTags([...tags, tag]);
+      const onAddition = (tag: SelectOption) => {
+        if (tag.id !== '') {
+          onChangeTags([...tags, tag]);
+        }
+        // eslint-disable-next-line no-console
+        console.log('hmm');
+      };
+
       const onDelete = (tag: SelectOption) => {
         const newTags = tags.slice(0);
         const tagIndex = tags.findIndex(val => val.id === tag.id);
@@ -30,7 +37,7 @@ export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
 
       return (
         <Flex sx={{ alignItems: 'center' }}>
-          <Grid gap={2} columns={[1, 1, 2, 3]}>
+          <Grid gap={1} columns={[1, 1, 2, 3]}>
             {(tags || []).map(tag => (
               <Card key={tag.id}>
                 <Flex
