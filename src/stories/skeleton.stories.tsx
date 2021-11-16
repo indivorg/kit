@@ -8,7 +8,7 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const defaults: React.FC = props => (
+export const simpleLayout: React.FC = props => (
   <Box>
     <Flex>
       <Skeleton {...props} shape="circular" size="10rem" />
