@@ -8,10 +8,13 @@ export interface SkeletonProps extends BoxProps {
 }
 
 const pulseKeyframe = keyframes({
-  from: {
-    opacity: 0,
+  '0%': {
+    opacity: 1,
   },
-  to: {
+  '50%': {
+    opacity: 0.4,
+  },
+  '100%': {
     opacity: 1,
   },
 });
