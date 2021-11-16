@@ -21,11 +21,7 @@ export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
   React.forwardRef(
     ({ tags = [], onChangeTags = () => '', children, ...props }) => {
       const onAddition = (tag: SelectOption) => {
-        if (tag.id !== '') {
-          onChangeTags([...tags, tag]);
-        }
-        // eslint-disable-next-line no-console
-        console.log('hmm');
+        if (tag.id !== '') onChangeTags([...tags, tag]);
       };
 
       const onDelete = (tag: SelectOption) => {
