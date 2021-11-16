@@ -15,29 +15,40 @@ export interface FileUploadProps {
   remove?: () => void;
 }
 
-export const DocumentFileUpload: React.FC<FileUploadProps> = (props) => {
-  const { value, id, accept, multiple, buttonComponent, validate, upload, remove } =
-    props;
+export const DocumentFileUpload: React.FC<FileUploadProps> = props => {
+  const {
+    value,
+    id,
+    accept,
+    multiple,
+    buttonComponent,
+    validate,
+    upload,
+    remove,
+  } = props;
 
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([] as string[]);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const onButtonClick = () => inputRef.current && inputRef.current.click();
+  const onButtonClick = () => inputRef.current?.click();
   const onInputChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const { files: filesToUpload } = event.target;
     if (!filesToUpload?.length) {
       return;
     }
     if (validate) {
-      const validationErrors = Array.from(filesToUpload).reduce((acc: string[], file) => {
-        const err = validate(file);
-        if (err) {
-          acc.push(err);
-        }
-        return acc;
-      }, []);
+      const validationErrors = Array.from(filesToUpload).reduce(
+        (acc: string[], file) => {
+          const err = validate(file);
+          if (err) {
+            acc.push(err);
+          }
+          return acc;
+        },
+        [],
+      );
       if (validationErrors.length) {
         setErrors(validationErrors);
         return;
@@ -47,8 +58,8 @@ export const DocumentFileUpload: React.FC<FileUploadProps> = (props) => {
     setLoading(true);
     try {
       await upload(filesToUpload);
-    } catch (err) {
-      setErrors([err.message]);
+    } catch (error: any) {
+      setErrors([error.message]);
     }
     setLoading(false);
   };

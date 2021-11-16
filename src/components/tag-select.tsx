@@ -20,28 +20,35 @@ export interface TagDropdownProps extends SelectProps {
 export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
   React.forwardRef(
     ({ tags = [], onChangeTags = () => '', children, ...props }) => {
-      const onAddition = (tag: SelectOption) => onChangeTags([...tags, tag]);
+      const onAdd = (tag: SelectOption) => {
+        if (tag.id !== '') {
+          if (!tags.find(entry => tag.id === entry.id))
+            onChangeTags([...tags, tag]);
+        }
+      };
+
       const onDelete = (tag: SelectOption) => {
         const newTags = tags.slice(0);
-        const tagIndex = tags.findIndex(val => val.id === tag.id);
+        const tagIndex = newTags.findIndex(val => val.id === tag.id);
         newTags.splice(tagIndex, 1);
         onChangeTags(newTags);
       };
 
       return (
         <Flex sx={{ alignItems: 'center' }}>
-          <Grid gap={2} columns={[1, 1, 2, 3]}>
+          <Grid gap={1} columns={[1, 1, 2, 3]}>
             {(tags || []).map(tag => (
               <Card key={tag.id}>
                 <Flex
                   sx={{
                     backgroundColor: 'primary',
-                    border: '3px solid',
+                    border: '0.2rem solid',
                     borderColor: 'secondary',
-                    borderRadius: '8px',
+                    borderRadius: '0.5rem',
                     color: 'background',
                     alignItems: 'center',
-                    p: '5px 9px 5px 9px',
+                    py: 1,
+                    px: 2,
                     m: '8px',
                     width: 'auto',
                     minWidth: '8.75rem',
@@ -50,7 +57,7 @@ export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
                   <Text>{tag.text}</Text>
                   <IconButton
                     sx={{
-                      fontSize: '24px',
+                      fontSize: '1.2rem',
                       ml: 3,
                       flexGrow: 1,
                       justifyContent: 'flex-end',
@@ -67,7 +74,7 @@ export const TagSelect: ForwardRef<HTMLSelectElement, TagDropdownProps> =
               <Select
                 {...props}
                 onChange={optionElement =>
-                  onAddition({
+                  onAdd({
                     id: optionElement.id,
                     text: optionElement.text,
                   })

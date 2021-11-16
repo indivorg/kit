@@ -36,7 +36,7 @@ export const ImageFileUpload: React.FC<ImageFileUploadProps> = props => {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const onButtonClick = () => inputRef.current && inputRef.current.click();
+  const onButtonClick = () => inputRef.current?.click();
   const onInputChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const { files: filesToUpload } = event.target;
     if (!filesToUpload?.length) {
@@ -67,8 +67,8 @@ export const ImageFileUpload: React.FC<ImageFileUploadProps> = props => {
           setImage(url);
         }
       }
-    } catch (err) {
-      setErrors([err.message]);
+    } catch (error: any) {
+      setErrors([error.message]);
     }
     setLoading(false);
   };
