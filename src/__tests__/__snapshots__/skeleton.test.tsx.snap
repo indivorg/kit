@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`skeleton should render circular 1`] = `
+<div
+  className="css-tg8bh6"
+/>
+`;
+
+exports[`skeleton should render rectangular 1`] = `
+<div
+  className="css-1v4u1j6"
+/>
+`;
+
+exports[`skeleton should render text 1`] = `
+<div
+  className="css-8yc0al"
+/>
+`;
