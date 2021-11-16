@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, Flex, Heading, Text } from 'theme-ui';
+import { Box, Card, Flex, Heading, Text, Theme, ThemeProvider } from 'theme-ui';
 import { Skeleton } from '../skeleton';
 
 export default {
@@ -26,6 +26,10 @@ export const textShape: React.FC = props => (
 
 export const circleShape: React.FC = props => (
   <Skeleton {...props} shape="circular" size={48} />
+);
+
+export const rectagularShape: React.FC = props => (
+  <Skeleton {...props} shape="rectangular" sx={{ width: 200, height: 400 }} />
 );
 
 export const cardLoading: React.FC = props => (
@@ -73,7 +77,7 @@ export const cardLoading: React.FC = props => (
         }}
       >
         <Flex>
-          <Skeleton />
+          <Skeleton sx={{ width: '50%' }} />
           <Skeleton
             {...props}
             shape="circular"
@@ -89,4 +93,20 @@ export const cardLoading: React.FC = props => (
       </Card>
     </Flex>
   </Box>
+);
+
+export const withThemeStyles: React.FC = props => (
+  <ThemeProvider
+    theme={
+      {
+        skeleton: {
+          primary: {
+            backgroundColor: 'yellow',
+          },
+        },
+      } as Theme
+    }
+  >
+    <Skeleton {...props} shape="rectangular" sx={{ width: 500, height: 500 }} />
+  </ThemeProvider>
 );
