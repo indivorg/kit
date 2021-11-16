@@ -16,4 +16,5 @@ export * from './components/tag-field';
 export * from './components/tag-select';
 export * from './breadcrumb';
 export * from './list-item';
+export * from './skeleton';
 export * from './table';
