@@ -30,7 +30,6 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
           width: '100%',
           borderRadius: 4,
           transition: 'border 15ms ease-out',
-          cursor: hasChildren && 'pointer',
           boxSizing: 'border-box',
           border: 3,
           borderStyle: 'solid',
@@ -41,7 +40,11 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
         }}
       >
         <Flex
-          sx={{ justifyContent: 'space-between', p: 3 }}
+          sx={{
+            justifyContent: 'space-between',
+            p: 3,
+            cursor: hasChildren && 'pointer',
+          }}
           onClick={toggleDetails}
         >
           {summary}
