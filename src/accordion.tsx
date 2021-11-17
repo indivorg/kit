@@ -15,6 +15,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
       <Box
         ref={ref}
         variant="primary"
+        as="button"
         {...props}
         // @ts-expect-error themeKey is a private prop
         __themeKey="list"
@@ -22,13 +23,19 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
           lineHeight: 'inherit',
           textDecoration: 'none',
           fontSize: 'inherit',
-          border: 3,
-          borderStyle: 'solid',
-          borderColor: isOpen ? 'primary' : 'muted',
+          // borderColor: isOpen ? 'primary' : 'muted',
+          backgroundColor: 'transparent',
+          display: 'block',
+          textAlign: 'left',
+          width: '100%',
           borderRadius: 4,
           transition: 'border 15ms ease-out',
           cursor: hasChildren && 'pointer',
-          ':hover': hasChildren && {
+          boxSizing: 'border-box',
+          border: 3,
+          borderStyle: 'solid',
+          borderColor: 'transparent',
+          ':hover,:focus': {
             borderColor: 'primary',
           },
         }}
