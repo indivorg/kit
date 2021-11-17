@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/indivorg/kit/compare/v1.2.0...v1.3.0) (2021-11-17)
+
+
+### Features
+
+* implement skeleton ([#20](https://www.github.com/indivorg/kit/issues/20)) ([808d4fb](https://www.github.com/indivorg/kit/commit/808d4fbc3fed7dbbc035ee28e3d07f37e9ae51c0))
+
+
+### Bug Fixes
+
+* **list-item:** reduce border transition time ([afc14e3](https://www.github.com/indivorg/kit/commit/afc14e351a836ba3e725ae8db31b78bda4412a0a))
+* remove field image margins ([#26](https://www.github.com/indivorg/kit/issues/26)) ([c397a15](https://www.github.com/indivorg/kit/commit/c397a15c17d017ffbda3e5bf9fe966ed214d821d))
+
 ## [1.2.0](https://www.github.com/indivorg/kit/compare/v1.1.0...v1.2.0) (2021-10-18)
 
 
