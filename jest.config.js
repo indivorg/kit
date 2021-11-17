@@ -7,6 +7,7 @@ module.exports = {
     '.*/*.fixtures.ts',
     '.*/dist/.*',
     '.*dist.*',
+    'test-utils.ts',
   ],
   globals: {
     'ts-jest': {

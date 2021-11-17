@@ -1,6 +1,6 @@
 {
   "name": "@indivorg/kit",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "keywords": [
     "style-guide",
     "theme-ui",
@@ -10,7 +10,7 @@
     "design",
     "indiv"
   ],
-  "repository": "indivorg/kit",
+  "repository": "github:indivorg/kit",
   "license": "Apache-2.0",
   "author": "Bjerk AS / Indiv AS",
   "main": "./dist/cjs/components.js",
@@ -25,13 +25,20 @@
     "dev": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "lint": "eslint \"src/**/*.ts\" --fix"
+    "test": "jest --coverage src/**/*"
   },
   "dependencies": {
+    "react-icons": "^4.2.0",
+    "react-modal": "^3.14.3",
     "react-table": "^7.7.0",
+    "react-test-renderer": "^17.0.2",
+    "slate": "^0.58.1",
+    "slate-react": "^0.58.2",
     "storybook-addon-theme-ui": "^0.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
+    "@emotion/jest": "^11.6.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@indivorg/eslint-config": "^2",
@@ -41,17 +48,22 @@
     "@storybook/react": "^6.3.4",
     "@theme-ui/preset-base": "^0.10.1",
     "@types/faker": "^5.5.7",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.2",
+    "@types/react-modal": "^3.12.1",
     "@types/react-table": "^7.7.2",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "babel-loader": "^8.2.2",
     "eslint": "^7.30.0",
     "faker": "^5.5.3",
+    "jest": "^27.3.1",
     "prettier": "^2.3.2",
     "react": "^17.0.1",
     "react-dom": "17.0.2",
     "react-scripts": "^4.0.3",
     "theme-ui": "^0.10.0",
+    "ts-jest": "^27.0.7",
     "typescript": "^4"
   },
   "peerDependencies": {
