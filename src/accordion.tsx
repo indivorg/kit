@@ -15,19 +15,10 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
       <Box
         ref={ref}
         variant="primary"
-        as="button"
         {...props}
         // @ts-expect-error themeKey is a private prop
         __themeKey="list"
         __css={{
-          lineHeight: 'inherit',
-          textDecoration: 'none',
-          fontSize: 'inherit',
-          // borderColor: isOpen ? 'primary' : 'muted',
-          backgroundColor: 'transparent',
-          display: 'block',
-          textAlign: 'left',
-          width: '100%',
           borderRadius: 4,
           transition: 'border 15ms ease-out',
           boxSizing: 'border-box',
@@ -40,29 +31,28 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
         }}
       >
         <Flex
+          as="button"
+          className="accordion-heading"
           sx={{
+            display: 'flex',
+            width: '100%',
             justifyContent: 'space-between',
-            p: 3,
+            backgroundColor: 'transparent',
+            fontSize: 'inherit',
+            border: 0,
             cursor: hasChildren && 'pointer',
+            '::after': {
+              border: '2px solid',
+              borderColor: 'primary',
+            },
           }}
+          aria-expanded={isOpen ? 'true' : 'false'}
           onClick={toggleDetails}
         >
           {summary}
           <Box>Clicky</Box>
         </Flex>
-        {isOpen && (
-          <Box sx={{ px: 3, pb: 3 }}>
-            <Box
-              sx={{
-                borderBottomColor: 'muted',
-                borderBottomStyle: 'solid',
-                borderBottomWidth: 2,
-                mb: 3,
-              }}
-            />
-            {otherChildren}
-          </Box>
-        )}
+        {isOpen && otherChildren}
       </Box>
     );
   },
