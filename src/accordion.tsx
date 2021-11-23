@@ -60,7 +60,9 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
         >
           {summary}
         </Flex>
-        {isOpen && otherChildren}
+        <Box as="section" hidden={!isOpen}>
+          {otherChildren}
+        </Box>
       </Box>
     );
   },
