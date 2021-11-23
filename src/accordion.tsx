@@ -40,6 +40,9 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
             p: 0,
             m: 0,
             cursor: hasChildren && 'pointer',
+            '&:focus': {
+              outline: 'none',
+            },
             '&::after': {
               content: '""',
               pointerEvents: 'none',
