@@ -9,10 +9,10 @@ export default {
 };
 
 export const Normal: React.FC = () => (
-  <Accordion>
-    <Box>Hello there! This first box is visible</Box>
+  <Accordion sx={{ borderRadius: 10 }}>
+    <Box sx={{ p: 3 }}>Hello there! This first box is visible</Box>
     <Box sx={{ px: 3, pb: 3 }}>
-      <Divider sx={{ mb: 3 }} />
+      <Divider sx={{ m: 0, mb: 3 }} />
       This is a hidden box
     </Box>
   </Accordion>

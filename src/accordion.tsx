@@ -11,37 +11,43 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
       setIsOpen(!isOpen);
     }, [isOpen]);
 
+    const { borderRadius = 4 } = (props.sx as any) ?? {};
+
     return (
       <Box
-        ref={ref}
         variant="primary"
+        ref={ref}
         {...props}
         // @ts-expect-error themeKey is a private prop
-        __themeKey="list"
+        __themeKey="accordion"
         __css={{
-          borderRadius: 4,
-          transition: 'border 15ms ease-out',
-          boxSizing: 'border-box',
-          border: 3,
-          borderStyle: 'solid',
-          borderColor: 'transparent',
-          ':hover,:focus': {
-            borderColor: 'primary',
-          },
+          position: 'relative',
+          borderRadius,
+          border: 0,
         }}
       >
         <Flex
           as="button"
           className="accordion-heading"
-          sx={{
+          // @ts-expect-error themeKey is a private prop
+          __css={{
             display: 'flex',
             width: '100%',
             justifyContent: 'space-between',
             backgroundColor: 'transparent',
             fontSize: 'inherit',
             border: 0,
+            p: 0,
+            m: 0,
             cursor: hasChildren && 'pointer',
-            '::after': {
+            '&::after': {
+              content: '""',
+              pointerEvents: 'none',
+              borderRadius,
+              position: 'absolute',
+              inset: -2,
+            },
+            '&:focus::after,&:hover::after': {
               border: '2px solid',
               borderColor: 'primary',
             },
@@ -50,7 +56,6 @@ export const Accordion = React.forwardRef<HTMLDivElement, BoxProps>(
           onClick={toggleDetails}
         >
           {summary}
-          <Box>Clicky</Box>
         </Flex>
         {isOpen && otherChildren}
       </Box>
