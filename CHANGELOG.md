@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/indivorg/kit/compare/v1.3.0...v1.4.0) (2021-11-25)
+
+
+### Features
+
+* Accordion ([#25](https://www.github.com/indivorg/kit/issues/25)) ([ac6dbed](https://www.github.com/indivorg/kit/commit/ac6dbedd06b854cb18ab31068aa4d120a28a90ea))
+
 ## [1.3.0](https://www.github.com/indivorg/kit/compare/v1.2.0...v1.3.0) (2021-11-17)
 
 
