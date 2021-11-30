@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/indivorg/kit/compare/v1.4.0...v1.5.0) (2021-11-30)
+
+
+### Features
+
+* add support for customising button labels, remove incorrect styling ([#33](https://www.github.com/indivorg/kit/issues/33)) ([d0fdb8a](https://www.github.com/indivorg/kit/commit/d0fdb8ae531be7a4267880a5b5b56a42620d29b3))
+
 ## [1.4.0](https://www.github.com/indivorg/kit/compare/v1.3.0...v1.4.0) (2021-11-25)
 
 
