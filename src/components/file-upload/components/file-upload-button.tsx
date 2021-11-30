@@ -12,18 +12,7 @@ export const FileUploadButton: React.FC<FileUploadButtonProps> = ({
   children,
   ...props
 }) => (
-  <Button
-    variant="secondary"
-    type="button"
-    sx={{
-      display: 'inline-flex',
-      alignItems: 'center',
-      color: 'text',
-      borderColor: 'text',
-    }}
-    disabled={loading}
-    {...props}
-  >
+  <Button type="button" disabled={loading} {...props}>
     {children}
     {!loading ? (
       <HiOutlineUpload size={16} sx={{ ml: 2 }} />
