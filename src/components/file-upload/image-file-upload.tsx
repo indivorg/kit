@@ -20,6 +20,8 @@ export interface ImageFileUploadProps {
   validate?: (file: File) => string | void;
   upload: (files: File) => Promise<string> | null;
   remove?: (file: UploadedFile) => void;
+  label?: string;
+  deleteLabel?: string;
 }
 
 const defaultProps = {
@@ -27,8 +29,18 @@ const defaultProps = {
 };
 
 export const ImageFileUpload: React.FC<ImageFileUploadProps> = props => {
-  const { value, user, id, accept, buttonComponent, validate, upload, remove } =
-    props;
+  const {
+    value,
+    user,
+    id,
+    accept,
+    buttonComponent,
+    validate,
+    upload,
+    remove,
+    label,
+    deleteLabel,
+  } = props;
 
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([] as string[]);
@@ -109,7 +121,7 @@ export const ImageFileUpload: React.FC<ImageFileUploadProps> = props => {
           <label htmlFor={id}>
             {buttonComponent || (
               <FileUploadButton loading={loading} onClick={onButtonClick}>
-                Upload Image
+                {label ? label : 'Upload Image'}
               </FileUploadButton>
             )}
             <FileUploadInput
@@ -128,7 +140,7 @@ export const ImageFileUpload: React.FC<ImageFileUploadProps> = props => {
               setImage('');
             }}
           >
-            Delete image
+            {deleteLabel ? deleteLabel : 'Delete image'}
           </FileDeleteButton>
         </Box>
         {errors && errors.length > 0 && (
